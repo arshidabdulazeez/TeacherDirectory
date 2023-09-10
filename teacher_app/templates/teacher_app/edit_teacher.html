@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Teacher</title>
+</head>
+<body>
+    <h1>Edit Teacher Information</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Display form errors, if any -->
+        {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for error in form.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- First Name -->
+        <div class="form-group">
+            <label for="id_first_name">First Name:</label>
+            {{ form.first_name }}
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+            <label for="id_last_name">Last Name:</label>
+            {{ form.last_name }}
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="form-group">
+            <label for="id_profile_picture">Profile Picture:</label>
+            {{ form.profile_picture }}
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+            <label for="id_email">Email Address:</label>
+            {{ form.email }}
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+            <label for="id_phone_number">Phone Number:</label>
+            {{ form.phone_number }}
+        </div>
+
+        <!-- Room Number -->
+        <div class="form-group">
+            <label for="id_room_number">Room Number:</label>
+            {{ form.room_number }}
+        </div>
+
+        <!-- Subjects Taught -->
+        <div class="form-group">
+            <label for="id_subjects_taught">Subjects Taught:</label>
+            {{ form.subjects_taught }}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Update Teacher</button>
+    </form>
+    
+    <a href="{% url 'teacher_list' %}">Back to Teacher List</a>
+</body>
+</html>

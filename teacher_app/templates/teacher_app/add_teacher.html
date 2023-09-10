@@ -1,0 +1,7 @@
+
+<h1>{% if teacher %}Edit Teacher: {{ teacher.first_name }} {{ teacher.last_name }}{% else %}Add Teacher{% endif %}</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>

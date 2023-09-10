@@ -1,0 +1,13 @@
+
+
+{% block content %}
+<h1>Upload CSV File</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="csv_file">
+    <button type="submit">Upload CSV</button>
+</form>
+
+<a href="{% url 'teacher_list' %}">Back to Teacher List</a>
+{% endblock %}

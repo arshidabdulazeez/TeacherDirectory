@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Directory</title>
+    <style>.nav-item{
+        padding: 10px;
+    }</style>
+    
+</head>
+<body>
+    <header>
+        <h1>Teacher Directory</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-button">Login</a></li>
+                <li class="nav-item"><a href="{% url 'register' %}" class="nav-button">Register</a></li>
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-button">Logout</a></li>
+
+
+
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-button">Home</a></li>
+                <li class="nav-item"><a href="{% url 'teacher_list' %}" class="nav-button">Teacher List</a></li>
+                <li class="nav-item"><a href="{% url 'add_teacher' %}" class="nav-button">Add Teacher</a></li>
+                <!-- Add more buttons and links as needed -->
+                <li class="nav-item"><a href="{% url 'add_subject' %}" class="nav-button">Add Subject</a></li>
+                <li class="nav-item"><a href="{% url 'upload_csv' %}" class="nav-button">Import Teacher</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <!-- Add your site's footer content here -->
+    </footer>
+</body>
+</html>

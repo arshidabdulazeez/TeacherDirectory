@@ -1,0 +1,25 @@
+{% load static %}
+<h1>Teacher Directory</h1>
+<style>
+
+</style>
+<div id="filter-form">
+    <!-- AJAX filter form for filtering by letter or subject -->
+    <label for="letter-filter">Filter by Last Name (First Letter):</label>
+    <input type="text" id="letter-filter">
+    <label for="subject-filter">Filter by Subject:</label>
+    <select id="subject-filter">
+        <option value="">All</option>
+        {% for subject in subjects %}
+            <option value="{{ subject.id }}">{{ subject.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit">
+</div>
+
+<ul id="teacher-list">
+    <!-- Teacher list will be populated here using AJAX -->
+</ul>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="{% static 'js/ajax_filter.js' %}"></script>

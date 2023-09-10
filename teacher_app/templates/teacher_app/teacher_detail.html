@@ -1,0 +1,15 @@
+
+<h1>{{ teacher.first_name }} {{ teacher.last_name }}</h1>
+<p>Email: {{ teacher.email }}</p>
+<p>Phone: {{ teacher.phone_number }}</p>
+<p>Room: {{ teacher.room_number }}</p>
+<p>Subjects Taught:</p>
+<ul>
+    {% for subject in teacher.subjects_taught.all %}
+        <li>{{ subject.name }}</li>
+    {% endfor %}
+</ul>
+<h3>{{ teacher.profile_picture.url }}</h3>
+<img src="{{ teacher.profile_picture.url }}" alt="{{ teacher.first_name }} {{ teacher.last_name }}">
+
+<!-- Add links or buttons for editing or returning to the teacher list -->
